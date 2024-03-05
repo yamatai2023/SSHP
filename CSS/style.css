@@ -1,0 +1,287 @@
+@charset "utf-8";
+
+html{
+    font-size: 100%;
+}
+
+body{
+    color: black;
+}
+
+a{
+    text-decoration: none;
+}
+
+img{
+    max-width: 100%;
+}
+
+li{
+    list-style: none;
+
+}
+
+/*==================================================
+共通　横並びのための設定
+===================================*/
+
+.gnavi{
+    display: flex;
+    flex-wrap: wrap;/*スマホ表示折り返し用なのでPCのみなら不要*/
+    margin:0 0 50px 0;
+    list-style: none;
+}
+
+.gnavi li a{
+    display: block;
+   padding:10px 30px;
+    text-decoration: none;
+    color: #333;
+}
+
+.gnavi li{
+    margin-bottom:20px;
+}
+
+/*==================================================
+　5-3-1 中心から外に線が伸びる（下部）
+===================================*/
+
+.gnavi li a{
+    /*線の基点とするためrelativeを指定*/
+  position: relative;
+}
+
+.gnavi li a:hover{
+  color:gray;
+}
+
+.gnavi li a::after {
+    content: '';
+    /*絶対配置で線の位置を決める*/
+    position: absolute;
+    bottom: 0;
+    left: 10%;
+    /*線の形状*/
+    width: 80%;
+    height: 2px;
+    background:black;
+    /*アニメーションの指定*/
+    transition: all .3s;
+    transform: scale(0, 1);/*X方向0、Y方向1*/
+    transform-origin: center top;/*上部中央基点*/
+}
+
+/*現在地とhoverの設定*/
+.gnavi li a:hover::after {
+    transform: scale(1, 1);/*X方向にスケール拡大*/
+}
+
+
+.sabu-title a{
+    display: block;
+
+}
+
+.section_title{
+    display: inline-block;
+    font-size: 2em;
+    text-align: center;
+    margin-bottom: 60px;
+    border-bottom: solid 1px #383e45;
+}
+
+.content_title{
+    font-size: 1px;
+    margin-bottom:10px 1px;
+}
+
+.wrapper{
+    max-width: 960px;
+    margin:0px auto 50px auto;
+    padding: 1em;
+    text-align: center;
+}
+
+#header{
+    display: flex;
+    justify-content:flex-end;
+    align-content: center;
+    padding: 0 60px;
+}
+
+#header ul{
+    display: flex;
+    padding: 10px 0;
+}
+
+#header li{
+    margin-left: 30px;
+}
+
+
+#mainvisual{
+    margin-bottom: 80px;
+}
+
+#mainvisual img{
+    width: 100%;
+    max-width: 1920px;
+    height: 600px;
+    object-fit: cover;
+
+}
+
+
+.Profile {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.Profile_box {
+    flex-direction: column;
+}
+
+.aboutimg{
+    width: 300px;
+    height:300px;
+    border-radius:50%;
+    background-image: url("img/IMG_7216.jpg");
+    }
+#about .right {
+        margin: 0 0 0 20px;
+        padding: 0;
+    }
+
+#about.content-title {
+        margin: 0;
+        padding: 0;
+        font-weight: bold;
+        font-size: 18px;
+}
+
+    #about .text{
+        text-align: left;
+    }
+
+    .image-wrapper {
+        text-align: center;
+    }
+
+    .skill{
+        width:600px;
+        height: 310px;
+    }
+
+
+  
+
+
+#footer{
+    font-size: 0.9rem;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+     background-color: #333;
+    
+    }
+
+
+
+
+    html {
+        scroll-behavior: smooth;
+    }
+    .pagetop {
+        height: 50px;
+        width: 50px;
+        position: fixed;
+        right: 30px;
+        bottom: 30px;
+        background: #fff;
+        border: solid 2px #000;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 2;
+    }
+    
+    .pagetop__arrow {
+        height: 10px;
+        width: 10px;
+        border-top: 3px solid #000;
+        border-right: 3px solid #000;
+        transform: translateY(20%) rotate(-45deg);
+    }
+
+    .img-db {
+        width: 80%;
+        max-width: 800px;
+        margin: auto;
+      }
+
+
+
+
+      #Design,#Event {
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* modaal */
+    .info_wrap {
+        display: flex;
+        flex-direction: column;
+        width: 45%;
+        height: auto;
+        margin-left: 5%;
+    } 
+     
+      .works_wrap {
+        margin-top: 20px;
+        display: grid;
+        grid-template-rows: 300px 300px;
+        grid-template-columns: 300px 300px 300px;
+        gap: 70px 30px;
+        justify-items: center;
+    }
+    
+      .works_img {
+        width:300px;
+        height:300px;
+        border-radius: 30%;
+        object-fit: cover;
+        border: solid 0.5px grey;
+        transition-duration: 3s;
+    }
+    .works_img:hover {
+        transform: scale(1.1);
+    }
+    .works_info {
+        display: flex;
+        flex-direction: row;
+        gap: 5%;
+    }
+    .works_info_img {
+        width: 50%;
+        height: auto;
+    }
+
+    .text {
+        margin-top:25px;
+        line-height: 30px;
+    }
+    .modaal-container{
+        width:1000px;
+        height:500px;
+    }
+
+/* modaal 設定 */
+    /*infoエリアをはじめは非表示*/
+    .info section {
+        display: none;
+    }
+
+
+    
